@@ -18,11 +18,11 @@ jobs:
         
       # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish TheSite.csproj -c Release -o release --nologo
+      run: dotnet publish WebTest.csproj -c Release -o release --nologo
       
-      # changes the base-tag in index.html from '/' to 'TheSite' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to TheSite
-      run: sed -i 's/<base href="\/" \/>/<base href="\/TheSite\/" \/>/g' release/wwwroot/index.html
+      # changes the base-tag in index.html from '/' to 'WebTest' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to WebTest
+      run: sed -i 's/<base href="\/" \/>/<base href="\/WebTest\/" \/>/g' release/wwwroot/index.html
       
       # copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
